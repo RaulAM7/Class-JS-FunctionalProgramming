@@ -135,3 +135,47 @@ const arrLFiltered = arrMathFilter(arrL, esPar)
 console.log(arrLFiltered)
 
 
+// Fabrica de functions 
+
+function multipleOf(n){
+    return function(num){
+        return console.log(num % n === 0)
+    }
+}
+
+const isEven = multipleOf(2)
+const isMultipleofCinco = multipleOf(5)
+
+isEven(4)
+
+
+
+
+
+// Chaining Methods
+
+const students = [
+    { name: 'Michael', tutor: true, grades: [10, 8, 7] },
+    { name: 'Audrey', tutor: true, grades: [4, 7, 5] },
+    { name: 'John', tutor: false, grades: [3.5, 6, 5] },
+    { name: 'Scott', tutor: true, grades: [9, 10, 10] },
+    { name: 'Mery', tutor: true, grades: [7, 9, 10] },
+    { name: 'Kevin', tutor: false, grades: [2, 3, 5] },
+]
+
+
+const sum = (arr) => arr.reduce((accum, element) => accum+element,0)
+const getAverageOfaReducedArr = (arr) => sum(arr)/(arr.length)
+const hasTutor = (arr) => arr.tutor
+const addAverage = (arrObject) => ({...arrObject, average:getAverageOfaReducedArr(arrObject.grades).toFixed(2)})
+
+const getTopNStudents = (arr, topNStudents) => 
+    arr
+        .filter(hasTutor)
+        .map(addAverage)
+        .map(element => ({name: element.name, avg:element.average}))
+        .sort((a,b) => b.avg-a.avg)
+        .slice(0, topNStudents)
+
+
+console.log(getTopNStudents(students, 4))
