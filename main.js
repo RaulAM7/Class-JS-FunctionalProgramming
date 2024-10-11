@@ -97,7 +97,6 @@ console.log(copyObject3)
 
 
 // USANDO RECURSION PARA HACER DEEP COPIES
-
 //Funcion que tome un array como parametro y cree una copia no referenciada
 function clone (arr){
     return arr.map((element) => {
@@ -108,11 +107,31 @@ function clone (arr){
         }
     }) 
 }
-
 const items = ['a','b','c',['d','e','f'],'g','h','i',['j','k','l','m'],'n']
-
 const copyItems = clone(items)
-
 copyItems[0] = 'No está referenciado'
 console.log(items)
 console.log(copyItems)
+
+// HIGHER ORDER FUNCTIONS
+// Ejemplo: una funcion que pilla un array de numeros y toma una funcion dedicada a una operacion concreta a eleccion
+
+const esPar = function(num) {return num % 2 === 0}
+const esMultiploCinco = function(num) {return num % 5 === 0}
+
+function arrMathFilter (arr, mathFn) {
+    let result = []
+    
+    arr.forEach((element) => {
+        if(mathFn(element)){
+            result.push(element)
+        }
+    })
+    return result
+}
+
+const arrL = [...Array(100).keys()]
+const arrLFiltered = arrMathFilter(arrL, esPar)
+console.log(arrLFiltered)
+
+
