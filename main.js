@@ -94,7 +94,7 @@ copyObject3.g = 'No esta referenciado'
 
 console.log(Object3)
 console.log(copyObject3)
-
+Object1
 
 // USANDO RECURSION PARA HACER DEEP COPIES
 //Funcion que tome un array como parametro y cree una copia no referenciada
@@ -189,3 +189,23 @@ const phoneBookObject = {
 phoneBookObject['Reboot Consulting']
 const name = 'Reboot Consulting'
 phoneBookObject['Reboot Consulting']
+
+
+// USANDO MAPS (OBJECT LIKES)
+const newMap = new Map()
+newMap.set('nombre', 'Raul')
+newMap.set('apellido1', 'Artiles')
+newMap.set('apellido2', 'Mendoza')
+newMap.set('localidad', 'Galdar')
+console.log(newMap)
+console.log(newMap.get('localidad'))
+
+for (let element of newMap) {
+    console.log('Iterando un Map con for of')
+    console.log(element)
+}
+newMap.forEach((element) => {
+    console.log('Iterando un Map con forEach')
+    console.log(element)
+})
+
