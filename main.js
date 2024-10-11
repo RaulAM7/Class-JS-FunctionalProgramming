@@ -94,3 +94,25 @@ copyObject3.g = 'No esta referenciado'
 
 console.log(Object3)
 console.log(copyObject3)
+
+
+// USANDO RECURSION PARA HACER DEEP COPIES
+
+//Funcion que tome un array como parametro y cree una copia no referenciada
+function clone (arr){
+    return arr.map((element) => {
+        if (Array.isArray(element)){
+            return clone(element)
+        } else {
+            return element
+        }
+    }) 
+}
+
+const items = ['a','b','c',['d','e','f'],'g','h','i',['j','k','l','m'],'n']
+
+const copyItems = clone(items)
+
+copyItems[0] = 'No está referenciado'
+console.log(items)
+console.log(copyItems)
