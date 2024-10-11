@@ -149,9 +149,6 @@ const isMultipleofCinco = multipleOf(5)
 isEven(4)
 
 
-
-
-
 // Chaining Methods
 
 const students = [
@@ -179,3 +176,16 @@ const getTopNStudents = (arr, topNStudents) =>
 
 
 console.log(getTopNStudents(students, 4))
+
+
+const phoneBookArray = [
+    { 'name': 'Reboot Academy', phone: '+34 123 456 789' },
+    { 'name': 'Reboot Consulting', phone: '+34 987 654 321' },
+]
+const phoneBookObject = {
+    'Reboot Academy': '+34 123 456 789',
+    'Reboot Consulting': '+34 987 654 321'
+}
+phoneBookObject['Reboot Consulting']
+const name = 'Reboot Consulting'
+phoneBookObject['Reboot Consulting']
