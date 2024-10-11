@@ -77,4 +77,20 @@ pruebaSpreadOperator.b = 'Si que está referenciado con el Spread Operator'
 console.log(pruebaSpreadOperator)
 
 
-// 
+// JSON.parse(JSON.stringfy(array))
+
+const Object3 = { f: 5, g: 6, h: { prima: 'ana' } }
+
+// Funcion para hacer copias no referenciadas
+
+function copyNonReferencedObject(obj) {
+    return JSON.parse(JSON.stringify(obj))
+}
+
+const copyObject3 = copyNonReferencedObject(Object3)
+console.log(copyObject3)
+
+copyObject3.g = 'No esta referenciado'
+
+console.log(Object3)
+console.log(copyObject3)
