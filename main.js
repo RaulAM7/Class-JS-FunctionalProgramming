@@ -17,7 +17,7 @@ function sumaParesImperative (arr) {
 }
 
 
-let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let nums = [...Array(11).keys()];
 console.log(sumaParesImperative(nums))
 
 
@@ -31,3 +31,6 @@ function sumaParesDeclarativa (arr){
 }
 
 console.log(sumaParesDeclarativa(nums))
+
+console.log(numbers)
+
